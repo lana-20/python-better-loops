@@ -40,6 +40,77 @@ Use enumerate when I need both the index and the value. the above code works, bu
     for idx, val in enumerate(numbers):
       print(idx, val)
   
+I can optionally start at a different number with _start=n_. Then the counting should start at that value.
+
+    for idx, val in enumerate(numbers, start=1):
+        print(idx, val)
+
+Output:
+
+    1 10
+    2 20
+    3 33
+    4 40
+
+Use _enumerate()_ instead of _range(len())_.
+
+    # 3) Use zip
+
+    a = [1, 2, 3]
+    b = ["a", "b", "c"]
+
+    for idx in range(len(a)):
+        print(a[idx], b[])idx)
+
+Output:
+
+    1 a
+    2 b
+    3 c
+
+Use the _zip()_ function to loop over multiple lists or iterables at once. 
+
+The code above works, but again it is error prone. If one list is longer it raises the index out of range error. 
+
+    a = [1, 2, 3, 4]
+    b = ["a", "b", "c"]
+
+    for idx in range(len(a)):
+        print(a[idx], b[])idx)
+
+Output:
+
+    IndexError: List index out of range
+
+A better way is to use the built-in _zip()_ function to zip a and b. _val1_ and _val2_ give me the value of the 1st list and the value of the 2nd list at once. The below code automatically stops at the the shorter of those lists.
+
+    for val1, val2 in zip(a, b):
+        print(val1, val2)
+
+Output:
+
+    1 a
+    2 b
+    3 c
+
+Sometimes it's useful to have the error so that I can catch bugs in the app. In order to see the error, in this case I can use the argument _strict=True_. It's new since Python 3.10. This raises an error if one of those lists is longer.
+
+    for val1, val2 in zip(a, b, strict=True):
+        print(val1, val2)
+
+Output:
+
+    ValueError: zip() argument 2 is shorter than argument 1
+
+
+
+
+
+
+
+
+
+
 
 
 
