@@ -248,8 +248,41 @@ I can refactor it with _pairwise_ by saying _for pair in pairwise_, which gives 
     for pair in pairwise('ABCDEFG'):
         print(pair[0], pair[1])
 
+Output:
+
+    A B
+    B C
+    C D
+    D E
+    E F
+    F G
+
+    A B
+    B C
+    C D
+    D E
+    E F
+    F G
+
 The 3rd function is the _takewhile_ function.
 
+    # 5) Use itertools
+    for item in [1,2,4,-1,4,1]:
+        if item >= 0:
+            print(item)
+        else:
+            break
+
+    print()
+
+    from itertools import takewhile
+    items = takewhile(lambda x: x => 0, [1,2,4,-1,4,1])
+    for item in items:
+        print(item)
+    
+    
+    
+    
 
 
 
