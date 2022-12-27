@@ -266,6 +266,8 @@ Output:
 
 The 3rd function is the _takewhile_ function.
 
+Often I want to iterate over an iterable. And, if I reach a certain condition, eg, if _i_ is negative, then I stop and break. I can easily refactor this with _takewhile_. It takes a predicate as the 1st param and an iterable as the 2nd one. This is a function where I can use _lambda_ in one line. It gives me the _items_ iterator. Now I can say _for item in items_ and get the same result.
+
     # 5) Use itertools
     for item in [1,2,4,-1,4,1]:
         if item >= 0:
@@ -279,10 +281,87 @@ The 3rd function is the _takewhile_ function.
     items = takewhile(lambda x: x => 0, [1,2,4,-1,4,1])
     for item in items:
         print(item)
-    
-    
-    
-    
+
+Output:
+
+    1
+    2
+    4
+
+    1
+    2
+    4
+
+### 6) Use numpy
+
+If speed is really important, or when doing lots of matrix multiplications and math operations, use _numpy_.
+_numpy_ provides methods for many linear algebra methods and matrix multiplications in a vectorized way.
+
+Instead of calculating the dot-product with a for loop, I want to avoid the loop and simply call _numpy.dot()_. It gives me the same result and it's much faster.
+
+    # 6) Use numpy
+    import numpy as np
+
+    vec_a = [1, 2, 3]
+    vec_b = [4, 5, 6]
+
+    result = 0
+    for val1, val2 in zip(vec_a, vec_b):
+        result += val1 * val2
+    print(result)
+
+    result = np.dot(vec_a, vec_b)
+    print(result)
+
+
+Output: 
+
+    32
+
+    32
+
+_numpy_ also has many functions that I can find in Python, eg, the built-in _sum()_ function. 
+The _numpy_ equivalent is _numpy.sum()_. The analog of the Python _range()_ function in _numpy_ is _numpy.arrange()_. It return the same result.
+
+    N = 100_000_000
+    def sum_python():
+        return sum(range(N))
+
+    def sum_numpy():
+        return np.sum(np.arrange(N))
+
+    print(sum_python())
+    print(sum_numpy())
+
+Output:
+
+    4999999950000000
+
+    4999999950000000
+
+Now, let's time both versions. The _numpy_ version is much faster.
+
+    import timeit
+    print("sum python:", timeit.timeit(sum_python, number=1))
+    print("sum numpy:", timeit.timeit(sum_numpy, number=1))
+
+Output:
+
+    sum python: 0.8761997090005025
+
+    sum numpy: 0.16527225000027101
+
+The one thing to be aware of si that in the case of _numpy_ I copy the whole array _np.arrange(N)_ into memory. So, the _sum_numpy()_ method requires more memory, but it's much faster.
+
+
+
+
+
+
+
+
+
+
 
 
 
