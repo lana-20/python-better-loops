@@ -351,7 +351,7 @@ Output:
 
     sum numpy: 0.16527225000027101
 
-The one thing to be aware of si that in the case of _numpy_ I copy the whole array _np.arrange(N)_ into memory. So, the _sum_numpy()_ method requires more memory, but it's much faster.
+The one thing to be aware of is that in the case of _numpy_ I copy the whole array _np.arrange(N)_ into memory. So, the _sum_numpy()_ method requires more memory, but it's much faster.
 
 
 
