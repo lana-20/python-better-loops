@@ -149,7 +149,106 @@ Output:
 Check this [talk](https://youtu.be/Wd7vcuiMhxU) on YouTube about a deeper look at iteration in Python.
 
 
+### 5) Use itertools
 
+Use the [itertools](docs.python.org/3/library/itertools.html) module more. It provides functions with iterators for efficient looping. There are a lot of functions. I use 3 examples that can be used to refactor the code.
+
+The 1st one is the _islice_ function. Here, I want to iterate over lines. And if I reach line 5, then I break. I can refactor the for loop with the _islice_ method.
+
+    # 5) Use itertools
+    lines = ["line1", "line2", "line3", "line4", "line5", "line6", "line7", "line8", "line9", "line10"]
+
+    for i, line in enumerate(lines):
+        if i >= 5:
+            break
+        print(line)
+
+    from itertools import islice
+
+    first_five_lines = islice(lines, 5)
+    for line in first_five_lines:
+        print(line)
+
+Output:
+
+    line1
+    line2
+    line3
+    line4
+    line5
+
+    line1
+    line2
+    line3
+    line4
+    line5
+
+This makes the code more readable.
+
+Here, again, be cautious if iterating a 2nd time. The output will be empty because it got consumed.
+
+I can use the start and the stop index.
+
+    for i, line in enumerate(lines):
+        if i >= 5:
+            break
+        print(line)
+
+    print()
+
+    from itertools import islice
+
+    first_five_lines = islice(lines, 1, 5)
+    for line in first_five_lines:
+        print(line)
+
+Output:
+
+    line1
+    line2
+    line3
+    line4
+    line5
+
+    line2
+    line3
+    line4
+    line5
+
+The output starts at index 1.
+
+I can also use a _step_ argument, eg, a step size of 2.
+
+    first_five_lines = islice(lines, 1, 5, 2)
+    for line in first_five_lines:
+        print(line)
+
+Output:
+
+    line2
+    line4
+
+This is a good approach when I just need to iterate over slices.
+
+The 2nd function is the _pairwise_ function. Per [documentation](https://docs.python.org/3/library/itertools.html#itertools.pairwise), _pairwise_ returns successive overlapping pairs taken from the input iterable.
+
+If I do it manually, the I have to say _for i in range(len(data)-1)_. I use _-1_ on length, because I then access _data[1]_ and _data[i+1]_.
+
+I can refactor it with _pairwise_ by saying _for pair in pairwise_, which gives me a tuple. So I can access index[0] and index[1]. It gives back the same result, but it's more optimized.
+
+    # 5) Use itertools
+
+    data = 'ABCDEFG'
+    for i in range(len(data)-1):
+        print(data[i], data[i+1])
+
+    print()
+
+    from itertools import pairwise
+    for pair in pairwise('ABCDEFG'):
+        print(pair[0], pair[1])
+
+The 3rd function is the _takewhile_ function.
 
 
 
