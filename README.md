@@ -232,7 +232,7 @@ This is a good approach when I just need to iterate over slices.
 
 The 2nd function is the _pairwise_ function. Per [documentation](https://docs.python.org/3/library/itertools.html#itertools.pairwise), _pairwise_ returns successive overlapping pairs taken from the input iterable.
 
-If I do it manually, the I have to say _for i in range(len(data)-1)_. I use _-1_ on length, because I then access _data[1]_ and _data[i+1]_.
+If I do it manually, then I have to say _for i in range(len(data)-1)_. I use _-1_ on length, because I then access _data[1]_ and _data[i+1]_.
 
 I can refactor it with _pairwise_ by saying _for pair in pairwise_, which gives me a tuple. So I can access index[0] and index[1]. It gives back the same result, but it's more optimized.
 
