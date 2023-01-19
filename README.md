@@ -2,7 +2,7 @@
 
 <img src="https://user-images.githubusercontent.com/70295997/213350589-e4f9248e-08c9-4df4-8696-f802b944f009.png" width=400>
 
-    # Bathe the Pets Function
+    # Bathe the Pets Loop Iteration
 
     for pet in ['🐕', '🐩', '🐈', '🐇']:
          print("%s is bathed" %pet, "🛁")
