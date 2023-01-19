@@ -1,5 +1,22 @@
 # Write Better For Loops in Python
 
+    # Bathe the Pets Function
+
+    for pet in ['🐕', '🐩', '🐈', '🐇']:
+         print("%s is bathed" %pet, "🛁")
+
+Do you have any ideas what this code might do? 
+First of all, we have some square brackets with a bunch of strings inside it, separated by commas. These square brackets are one way of creating something called a Python <code>list</code>.
+A list is just a collection of different values. And not just a collection, but an _ordered_ collection. Lists are extremely useful and we'll see them a lot. For now, what we're doing with this list is just grouping together the 4 pet emojis, in order.
+Take a look at the <code>for</code> keyword at the beginning of the line. This is a special keyword that tells Python we want to start a loop, meaning we want to execute the same block of code potentially multiple times, based on some kind of input. In our case, we want to loop over the list of emojis.
+Essentially, the loop will run for as many times as there are emojis, and each time through the loop, we'll get out a different emoji.  We'll be able to use that emoji with any name we specify; in our case, we just call it <code>pet</code>. The code block within the loop takes the emoji which is currently being provided, and prints it out.
+
+<img width="490" alt="Screenshot 2023-01-18 at 7 21 40 PM" src="https://user-images.githubusercontent.com/70295997/213349787-716950e3-6a08-42cb-b753-9dd8e15b7ede.png">
+
+
+There are several more examples of control flow in Python, and indeed several other kinds of loops. There are also several different ways to write better <code>for</code> loops.
+
+
 ### 1) Don't use loops at all
     # 1) Don't use loops at all
 
