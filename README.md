@@ -372,10 +372,10 @@ Output:
 
 The one thing to be aware of is that in the case of _numpy_ I copy the whole array _np.arrange(N)_ into memory. So, the _sum_numpy()_ method requires more memory, but it's much faster.
 
+----
 
 
-
-
+[How loops work in Python](https://youtube.com/shorts/WYLjcXpxFOQ?feature=share)
 
 
 
