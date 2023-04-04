@@ -1,7 +1,5 @@
 # ✏🔁🐍 Write Better For Loops in Python
 
-<img src="https://user-images.githubusercontent.com/70295997/213350589-e4f9248e-08c9-4df4-8696-f802b944f009.png" width=400>
-
     # Bathe the Pets Loop Iteration
 
     for pet in ['🐕', '🐩', '🐈', '🐇']:
@@ -375,7 +373,7 @@ The one thing to be aware of is that in the case of _numpy_ I copy the whole arr
 ----
 
 
-[How loops work in Python](https://youtube.com/shorts/WYLjcXpxFOQ?feature=share)
+Source Reference 📽️🔗 [How loops work in Python](https://youtube.com/shorts/WYLjcXpxFOQ?feature=share)
 
 
 
